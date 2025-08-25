@@ -86,6 +86,4 @@ pg = st.navigation(
     }
 )
 
-st.logo("logo.jpg",size = "large")
-
 pg.run()
