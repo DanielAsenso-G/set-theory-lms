@@ -95,5 +95,4 @@ pg = st.navigation(
         "Help": [set_visualizer_page, resources_page, notes_page]
     }
 )
-st.logo("images/logo.jpg",size = "large")
 pg.run()
