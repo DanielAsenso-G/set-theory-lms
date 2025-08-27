@@ -40,14 +40,10 @@ with st.expander("TrevTutor"):
 st.header("Visuals")
 
 st.write("Explore law tables and visuals for better understanding.")
-st.image("setLaws.webp", caption="Law Table ")
+st.image("images/setLaws.webp", caption="Law Table ")
 
 st.write("A Summary of the set relations.")
-st.image("set_relations.jpg", caption="Set Relations ")
+st.image("images/set_relations.jpg", caption="Set Relations ")
 
 st.write("The General format of Venn Diagrams")
-st.image("Venn_diagram.png", caption="Venn Diagrams ")
-
-
-
-
+st.image("images/Venn_diagram.png", caption="Venn Diagrams ")

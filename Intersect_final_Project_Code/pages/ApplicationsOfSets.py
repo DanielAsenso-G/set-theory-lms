@@ -48,6 +48,7 @@ if st.button("Show Venn Diagram"):
     venn.get_label_by_id('01').set_text(', '.join(set_B - set_A))
     venn.get_label_by_id('11').set_text(', '.join(set_A & set_B))
     st.pyplot(plt)
+    plt.close() # Always close the plot to free memory
 
 # Example: Scheduling Common Free Slots
 st.write("### Example: Scheduling Common Free Slots")

@@ -2,6 +2,7 @@ import streamlit as st
 import matplotlib.pyplot as plt
 from matplotlib_venn import venn2
 import time
+import os
 
 # Streamlit Interface
 st.title("Advanced Applications of Sets in Computer Science")
@@ -138,7 +139,7 @@ elif simulation == "Set Operations in BFS":
         if node not in visited:
             visited.add(node)
             st.write("Visited:", node)
-            queue.extend(graph[node] - visited)
+            queue.extend(list(graph[node] - visited))
             time.sleep(0.5)
 
 # Section: Interactive Challenges
@@ -169,4 +170,3 @@ elif challenge == "Simulate Set Operations":
 elif challenge == "Write a Set-Based Algorithm":
     st.write("**Challenge:** Implement an algorithm to find unique elements from two arrays.")
     st.write("Try it in your editor or discuss your approach!")
-    

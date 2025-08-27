@@ -4,11 +4,7 @@ st.title("🌟 Special Sets 🌟")
 
 st.write("""
 In this section, we’ll explore three special types of sets with fun examples and interactive questions:  
-- 🌎 **Universal Set**  
-- 🌀 **Empty Set**  
-- 🎯 **Singleton Set**  
-
-Each type is unique, and we’ll discover how they work in both real-life scenarios and mathematics. Let's dive in! 🚀
+- 🌎 **Universal Set** - 🌀 **Empty Set** - 🎯 **Singleton Set** Each type is unique, and we’ll discover how they work in both real-life scenarios and mathematics. Let's dive in! 🚀
 """)
 
 st.header("📖 __Definitions__")
@@ -28,7 +24,7 @@ A **Universal Set** is like the "big picture." It includes all possible elements
 It’s usually denoted by **Ų**. For example, think about all the flowers in the world—that’s your universal set! Roses, tulips, and sunflowers would then be subsets of this universal set. 🌸🌻🌷  
     """)
 
-    st.image("Universal-Set.png", caption="Universal Set containing subsets A and C")
+    st.image("images/Universal-Set.png", caption="Universal Set containing subsets A and C")
 
     st.write("""
 In the diagram above, even though the 'Heptagon' is not part of sets A or C, it’s still a member of the universal set. 🔺  
@@ -77,7 +73,7 @@ An **Empty Set** (also called a null set) is a set that has no members. It’s c
 For example, if you create a set of all unicorns in your neighborhood, it will be an empty set (because there are no unicorns around). 🦄❌  
     """)
 
-    st.image("Empty-Set.png", caption="Example of an Empty Set in a Venn Diagram")
+    st.image("images/Empty-Set.png", caption="Example of an Empty Set in a Venn Diagram")
 
     st.write("""
 ### Key Points:  
@@ -118,7 +114,7 @@ A **Singleton Set** is a set that contains exactly **one element**. Its cardinal
 For example, if you make a set of your favorite number and it only contains {7}, that’s a singleton set.  
     """)
 
-    st.image("Singleton-Set.jpg", caption="Example of a Singleton Set")
+    st.image("images/Singleton-Set.jpg", caption="Example of a Singleton Set")
 
     st.write("""
 ### Key Points:  

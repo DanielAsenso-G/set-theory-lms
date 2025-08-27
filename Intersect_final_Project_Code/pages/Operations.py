@@ -1,16 +1,12 @@
 import streamlit as st
+import os
 
 # Operations on sets
 st.title("🛠️ Operations on Sets")
 
 st.write("""
 In this section, we’ll explore four key operations on sets:  
-- 🌀 **Complement**  
-- ➖ **Difference**  
-- 📚 **Power Set**  
-- 🔄 **Cartesian Product**  
-
-Let’s learn and interact with these operations! 🚀
+- 🌀 **Complement** - ➖ **Difference** - 📚 **Power Set** - 🔄 **Cartesian Product** Let’s learn and interact with these operations! 🚀
 """)
 
 st.header("📖 __Definitions__")
@@ -27,7 +23,7 @@ It is denoted by \( A' \).
 For example, if the universal set \( U = \{a, b, c, d\} \) and \( A = \{a, b\} \), then \( A' = \{c, d\} \).
     """)
 
-    st.image("Universal-Set.png", caption="Complement Example (Placeholder Image)")
+    st.image("images/Universal-Set.png", caption="Complement Example (Placeholder Image)")
 
     st.write("""
 In the image above:  
@@ -38,8 +34,8 @@ In the image above:
     st.subheader("💡 Key Points:")
     st.write("""
     - The complement depends on the universal set.  
-    - \( A \cup A' = U \) (the union of a set and its complement gives the universal set).  
-    - \( A \cap A' = \emptyset \) (a set and its complement have no common elements).  
+    - \( A \\cup A' = U \) (the union of a set and its complement gives the universal set).  
+    - \( A \\cap A' = \\emptyset \) (a set and its complement have no common elements).  
     """)
 
     # Interactive Question
@@ -63,13 +59,13 @@ It is written as \( A - B \).
 For example, if \( A = \{1, 3, 5, 7\} \) and \( B = \{1, 5\} \), then \( A - B = \{3, 7\} \).  
     """)
 
-    st.image("Difference.png", caption="Difference of Sets")
+    st.image("images/Difference.png", caption="Difference of Sets")
 
     st.subheader("💡 Key Points:")
     st.write("""
     - \( A - B \) removes all elements of \( B \) from \( A \).  
-    - \( A - A = \emptyset \) (the difference of a set with itself is empty).  
-    - \( A - \emptyset = A \).  
+    - \( A - A = \\emptyset \) (the difference of a set with itself is empty).  
+    - \( A - \\emptyset = A \).  
     """)
 
     # Interactive Question
@@ -90,15 +86,15 @@ with tab3:
     st.write("""
 The **power set** of a set is the set of all possible subsets of that set, including the empty set and the set itself.  
 For example, if \( A = \{1, 2\} \), then:  
-\[ P(A) = \{\emptyset, \{1\}, \{2\}, \{1, 2\}\} \]  
+\[ P(A) = \{\\emptyset, \{1\}, \{2\}, \{1, 2\}\} \]  
     """)
 
-    st.image("Power-Set.png", caption="Power Set")
+    st.image("images/Power-Set.png", caption="Power Set")
 
     st.subheader("💡 Key Points:")
     st.write("""
     - If a set has \( n \) elements, its power set will have \( 2^n \) subsets.  
-    - The empty set \( \emptyset \) is always a subset.  
+    - The empty set \( \\emptyset \) is always a subset.  
     - The original set is included in the power set.  
     """)
 
@@ -118,24 +114,24 @@ For example, if \( A = \{1, 2\} \), then:
 with tab4:
     st.header("🔄 Cartesian Product")
     st.write("""
-The **Cartesian Product** of two sets, \( A \) and \( B \), is the set of all ordered pairs \( (a, b) \), where \( a \in A \) and \( b \in B \).  
+The **Cartesian Product** of two sets, \( A \) and \( B \), is the set of all ordered pairs \( (a, b) \), where \( a \\in A \) and \( b \\in B \).  
 For example, if \( A = \{1, 2\} \) and \( B = \{x, y\} \), then:  
-\[ A \times B = \{(1, x), (1, y), (2, x), (2, y)\} \]  
+\[ A \\times B = \{(1, x), (1, y), (2, x), (2, y)\} \]  
     """)
 
-    st.image("Cartesian.jpeg", caption="Cartesian Product")
+    st.image("images/Cartesian.jpeg", caption="Cartesian Product")
 
     st.subheader("💡 Key Points:")
     st.write("""
     - The Cartesian product creates pairs from elements of two sets.  
-    - If \( A \) has \( m \) elements and \( B \) has \( n \) elements, \( A \times B \) will have \( m \times n \) elements.  
-    - \( A \times B \neq B \times A \) (order matters!).  
+    - If \( A \) has \( m \) elements and \( B \) has \( n \) elements, \( A \\times B \) will have \( m \\times n \) elements.  
+    - \( A \\times B \\neq B \\times A \) (order matters!).  
     """)
 
     # Interactive Question
     st.subheader("❓ Question")
     answer = st.radio(
-        "If \( A = \{1\} \) and \( B = \{2, 3\} \), what is \( A \times B \)?",
+        "If \( A = \{1\} \) and \( B = \{2, 3\} \), what is \( A \\times B \)?",
         options=["{(1, 2), (1, 3)}", "{(2, 1), (3, 1)}", "{(1, 2), (1, 3), (2, 1)}"]
     )
     if st.button("Submit Answer (Cartesian Product)"):
