@@ -1,4 +1,11 @@
 import streamlit as st
+from pathlib import Path
+
+# Get the directory of the current script (e.g., '/pages')
+pages_dir = Path(__file__).parent
+
+# Get the root directory of the project (go up one level from 'pages')
+root_dir = pages_dir.parent
 
 st.title("🌟 Special Sets 🌟")
 
@@ -21,10 +28,11 @@ with tab1:
 
     st.write("""
 A **Universal Set** is like the "big picture." It includes all possible elements related to a certain context or group.  
-It’s usually denoted by **Ų**. For example, think about all the flowers in the world—that’s your universal set! Roses, tulips, and sunflowers would then be subsets of this universal set. 🌸🌻🌷  
+It’s usually denoted by **U**. For example, think about all the flowers in the world—that’s your universal set! Roses, tulips, and sunflowers would then be subsets of this universal set. 🌸🌻🌷  
     """)
 
-    st.image("images/Universal-Set.png", caption="Universal Set containing subsets A and C")
+    image_path = root_dir / "images" / "Universal-Set.png"
+    st.image(str(image_path), caption="Universal Set containing subsets A and C")
 
     st.write("""
 In the diagram above, even though the 'Heptagon' is not part of sets A or C, it’s still a member of the universal set. 🔺  
@@ -53,9 +61,9 @@ In a Venn diagram, the universal set is usually shown as a large rectangle that 
     question_1 = st.radio("1️⃣ Can a universal set have subsets that don’t overlap with each other?", 
                            options=["Yes", "No"], key="universal_q1")
     if question_1 == "Yes":
-        st.write("❌ Incorrect. Subsets can be non-overlapping as long as their elements belong to the universal set.")
+        st.write("✅ Correct! Subsets can be non-overlapping as long as their elements belong to the universal set.")
     elif question_1 == "No":
-        st.write("✅ Correct! Subsets can have no common elements but must still belong to the universal set.")
+        st.write("❌ Incorrect. Subsets can have no common elements but must still belong to the universal set.")
     
     question_2 = st.radio("2️⃣ If the universal set is the set of all pets, which of these is NOT a valid subset?", 
                            options=["Dogs", "Cats", "Unicorns"], key="universal_q2")
@@ -73,7 +81,8 @@ An **Empty Set** (also called a null set) is a set that has no members. It’s c
 For example, if you create a set of all unicorns in your neighborhood, it will be an empty set (because there are no unicorns around). 🦄❌  
     """)
 
-    st.image("images/Empty-Set.png", caption="Example of an Empty Set in a Venn Diagram")
+    image_path = root_dir / "images" / "Empty-Set.png"
+    st.image(str(image_path), caption="Example of an Empty Set in a Venn Diagram")
 
     st.write("""
 ### Key Points:  
@@ -114,7 +123,8 @@ A **Singleton Set** is a set that contains exactly **one element**. Its cardinal
 For example, if you make a set of your favorite number and it only contains {7}, that’s a singleton set.  
     """)
 
-    st.image("images/Singleton-Set.jpg", caption="Example of a Singleton Set")
+    image_path = root_dir / "images" / "Singleton-Set.jpg"
+    st.image(str(image_path), caption="Example of a Singleton Set")
 
     st.write("""
 ### Key Points:  
@@ -144,4 +154,4 @@ For example, if you make a set of your favorite number and it only contains {7},
     if question_2 == "{1, 2}" or question_2 == "{}":
         st.write("❌ Incorrect. {1, 2} has more than one element, and {} is an empty set.")
     elif question_2 == "{0}":
-        st.write("✅ Correct! {0} is a singleton set because it has exactly one element.")
+        st.success("✅ Correct! {0} is a singleton set because it has exactly one element.")

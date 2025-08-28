@@ -1,4 +1,11 @@
 import streamlit as st
+from pathlib import Path
+
+# Get the directory of the current script (e.g., '/pages')
+pages_dir = Path(__file__).parent
+
+# Get the root directory of the project (go up one level from 'pages')
+root_dir = pages_dir.parent
 
 # Page title
 st.title("Resource Page for Set Theory")
@@ -34,16 +41,17 @@ with st.expander("TrevTutor"):
     st.markdown("[Subsets and Power Sets](https://youtu.be/H5D6EAezsXQ?si=p7NaLpcrd6KbEjS3)")
     st.markdown("[Set Operations](https://youtu.be/4TlCToZZ5gA?si=_bN4YB_l3IM0czsc)")
 
-
-
 # Images Section
 st.header("Visuals")
 
 st.write("Explore law tables and visuals for better understanding.")
-st.image("images/setLaws.webp", caption="Law Table ")
+image_path = root_dir / "images" / "setLaws.webp"
+st.image(str(image_path), caption="Law Table ")
 
 st.write("A Summary of the set relations.")
-st.image("images/set_relations.jpg", caption="Set Relations ")
+image_path = root_dir / "images" / "set_relations.jpg"
+st.image(str(image_path), caption="Set Relations ")
 
 st.write("The General format of Venn Diagrams")
-st.image("images/Venn_diagram.png", caption="Venn Diagrams ")
+image_path = root_dir / "images" / "Venn_diagram.png"
+st.image(str(image_path), caption="Venn Diagrams ")

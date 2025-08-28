@@ -1,5 +1,11 @@
 import streamlit as st
-import os
+from pathlib import Path
+
+# Get the directory of the current script (e.g., '/pages')
+pages_dir = Path(__file__).parent
+
+# Get the root directory of the project (go up one level from 'pages')
+root_dir = pages_dir.parent
 
 # Operations on sets
 st.title("🛠️ Operations on Sets")
@@ -22,8 +28,8 @@ The **complement** of a set includes all the members of the universal set that a
 It is denoted by \( A' \).  
 For example, if the universal set \( U = \{a, b, c, d\} \) and \( A = \{a, b\} \), then \( A' = \{c, d\} \).
     """)
-
-    st.image("images/Universal-Set.png", caption="Complement Example (Placeholder Image)")
+    image_path = root_dir / "images" / "Universal-Set.png"
+    st.image(str(image_path), caption="Complement Example (Placeholder Image)")
 
     st.write("""
 In the image above:  
@@ -58,8 +64,8 @@ The **difference** of two sets, \( A \) and \( B \), is the set of elements that
 It is written as \( A - B \).  
 For example, if \( A = \{1, 3, 5, 7\} \) and \( B = \{1, 5\} \), then \( A - B = \{3, 7\} \).  
     """)
-
-    st.image("images/Difference.png", caption="Difference of Sets")
+    image_path = root_dir / "images" / "Difference.png"
+    st.image(str(image_path), caption="Difference of Sets")
 
     st.subheader("💡 Key Points:")
     st.write("""
@@ -88,8 +94,8 @@ The **power set** of a set is the set of all possible subsets of that set, inclu
 For example, if \( A = \{1, 2\} \), then:  
 \[ P(A) = \{\\emptyset, \{1\}, \{2\}, \{1, 2\}\} \]  
     """)
-
-    st.image("images/Power-Set.png", caption="Power Set")
+    image_path = root_dir / "images" / "Power-Set.png"
+    st.image(str(image_path), caption="Power Set")
 
     st.subheader("💡 Key Points:")
     st.write("""
@@ -118,8 +124,8 @@ The **Cartesian Product** of two sets, \( A \) and \( B \), is the set of all or
 For example, if \( A = \{1, 2\} \) and \( B = \{x, y\} \), then:  
 \[ A \\times B = \{(1, x), (1, y), (2, x), (2, y)\} \]  
     """)
-
-    st.image("images/Cartesian.jpeg", caption="Cartesian Product")
+    image_path = root_dir / "images" / "Cartesian.jpeg"
+    st.image(str(image_path), caption="Cartesian Product")
 
     st.subheader("💡 Key Points:")
     st.write("""

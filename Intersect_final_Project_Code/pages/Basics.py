@@ -1,4 +1,11 @@
 import streamlit as st
+from pathlib import Path
+
+# Get the directory of the current script (e.g., '/pages')
+pages_dir = Path(__file__).parent
+
+# Get the root directory of the project (go up one level from 'pages')
+root_dir = pages_dir.parent
 
 # Main Title
 st.title("🌟 **Basics of Set Theory** 🌟")
@@ -30,11 +37,12 @@ tab1, tab2, tab3, tab4, tab5, tab6 = st.tabs([
 with tab1:
     st.header("🌍 Universal Set")
     st.write("""
-    A **Universal Set** contains all possible elements under consideration for a specific topic, denoted by `Ų`.  
+    A **Universal Set** contains all possible elements under consideration for a specific topic, denoted by `U`.  
     For example: If the universal set represents "all flowers," subsets might include roses, tulips, and sunflowers.  
     """)
-    # Adjusted image path
-    st.image("images/Universal-Set.png", caption="Universal Set Visualization (Placeholder Image)")
+    # Pathlib adjusted image path
+    image_path = root_dir / "images" / "Universal-Set.png"
+    st.image(str(image_path), caption="Universal Set Visualization (Placeholder Image)")
     st.markdown("""
     #### Key Points:
     - The complement of a universal set is an **empty set** (`Φ` or `{}`).
@@ -56,8 +64,9 @@ with tab2:
     - Set of all odd numbers: `{1, 3, 5, ...}`  
     - Multiples of a number: `{n, 2n, 3n, ...}`  
     """)
-    # Adjusted image path
-    st.image("images/Natural-Numbers.png", caption="Visualizing Natural Numbers (Placeholder Image)")
+    # Pathlib adjusted image path
+    image_path = root_dir / "images" / "Natural-Numbers.png"
+    st.image(str(image_path), caption="Visualizing Natural Numbers (Placeholder Image)")
 
 # Tab 3: Subsets
 with tab3:
@@ -66,8 +75,9 @@ with tab3:
     A **Subset** contains elements that are all found in another set (called the **superset**).  
     For example: If `A = {1, 2}` and `B = {1, 2, 3, 4}`, then `A ⊆ B`.  
     """)
-    # Adjusted image path
-    st.image("images/Subset.jpeg", caption="Subsets Representation (Placeholder Image)")
+    # Pathlib adjusted image path
+    image_path = root_dir / "images" / "Subset.jpeg"
+    st.image(str(image_path), caption="Subsets Representation (Placeholder Image)")
     st.markdown("""
     #### Key Points:
     - Every set is a subset of itself: `A ⊆ A`.  
@@ -82,8 +92,9 @@ with tab4:
     Two sets are **Equal** if they contain exactly the same elements.  
     Example: If `A = {1, 2, 3}` and `B = {3, 2, 1}`, then `A = B`.  
     """)
-    # Adjusted image path
-    st.image("images/Equal-Sets.jpg", caption="Equal Sets Visualization (Placeholder Image)")
+    # Pathlib adjusted image path
+    image_path = root_dir / "images" / "Equal-Sets.jpg"
+    st.image(str(image_path), caption="Equal Sets Visualization (Placeholder Image)")
     st.markdown("""
     #### Cardinality of Equal Sets:
     - Equal sets have the same **cardinality** (number of elements): `|A| = |B|`.
@@ -97,8 +108,9 @@ with tab5:
     The **Union** of two or more sets includes all unique elements from those sets, denoted as `A ∪ B`.  
     Formula: `|A ∪ B| = |A| + |B| - |A ∩ B|`  
     """)
-    # Adjusted image path
-    st.image("images/Union.png", caption="Union of Sets Visualization (Placeholder Image)")
+    # Pathlib adjusted image path
+    image_path = root_dir / "images" / "Union.png"
+    st.image(str(image_path), caption="Union of Sets Visualization (Placeholder Image)")
     st.markdown("""
     #### Difference from Universal Set:
     - The **union** includes elements from specific sets.  
@@ -114,8 +126,9 @@ with tab6:
     - The set of even numbers between 0 and 50: `{2, 4, 6, ..., 50}`  
     - The set of prime numbers less than 20: `{2, 3, 5, 7, 11, 13, 17, 19}`  
     """)
-    # Adjusted image path
-    st.image("images/Finite-Sets.jpg", caption="Finite Set Example (Placeholder Image)")
+    # Pathlib adjusted image path
+    image_path = root_dir / "images" / "Finite-Sets.jpg"
+    st.image(str(image_path), caption="Finite Set Example (Placeholder Image)")
 
 # Footer
 st.markdown("---")

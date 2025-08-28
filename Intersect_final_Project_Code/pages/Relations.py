@@ -1,4 +1,11 @@
 import streamlit as st
+from pathlib import Path
+
+# Get the directory of the current script (e.g., '/pages')
+pages_dir = Path(__file__).parent
+
+# Get the root directory of the project (go up one level from 'pages')
+root_dir = pages_dir.parent
 
 # Relations between sets
 st.title("🔗 Relations Between Sets")
@@ -21,7 +28,8 @@ with tab1:
     st.header("📊 Venn Diagram")
     st.write("A Venn Diagram is a graphical representation of various sets and their relationships with each other.")
     st.write("Venn diagrams can represent intersections, unions, complements, and other operations regarding sets.")
-    st.image("images/intersection-of-sets---venn-diagram.jpg", caption="Venn Diagram", width=None)
+    image_path = root_dir / "images" / "intersection-of-sets---venn-diagram.jpg"
+    st.image(str(image_path), caption="Venn Diagram", width=None)
     st.write("The Venn diagram above shows the relationships between sets A and B, such as \( A \cap B \) (highlighted) and \( A \cup B \).")
 
     # Question for Venn Diagram
@@ -41,7 +49,8 @@ with tab2:
     st.header("🔝 Superset")
     st.write("If one set is the superset of another, all the members in the other set can be found in the superset.")
     st.write("__For Example__: If Set B is the superset of Set A, all elements in Set A are found in Set B.")
-    st.image("images/Superset.png", caption="Superset and Subset", width=None)
+    image_path = root_dir / "images" / "Superset.png"
+    st.image(str(image_path), caption="Superset and Subset", width=None)
     st.write("In the image above, Set B is the superset of Set A because Set A contains {4, 2, 1} and Set B contains {1, 2, 3, 4, 5}.")
 
     # Question for Superset
@@ -66,7 +75,8 @@ with tab3:
     st.write("One set is a subset of another if all the members of that set can be found in another set.")
     st.subheader("For Example")
     st.write("The set of all dogs is a subset of the set of all animals because all dogs are animals.")
-    st.image("images/Subset.jpeg", caption="Superset and Subset", width=None)
+    image_path = root_dir / "images" / "Subset.jpeg"
+    st.image(str(image_path), caption="Superset and Subset", width=None)
     st.write("Supersets and subsets are inversely related. If B is the superset of A, then A is the subset of B.")
 
     # Question for Subset
@@ -91,7 +101,8 @@ with tab4:
     st.write("Disjoint sets are sets with no common members. Thus, they have no intersection.")
     st.subheader("For Example")
     st.write("The set of even numbers and the set of odd numbers are disjoint because they have no members in common.")
-    st.image("images/Disjoint.png", caption="Disjoint Sets", width=None)
+    image_path = root_dir / "images" / "Disjoint.png"
+    st.image(str(image_path), caption="Disjoint Sets", width=None)
     st.caption("Image Credit: MathMonks.com")
     st.write("In the image above, Sets A and B are disjoint as they do not intersect.")
 
